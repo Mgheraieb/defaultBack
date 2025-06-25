@@ -5,6 +5,8 @@ export default function userModel(db) {
 	const base = createBaseModel(collection);
 	return {
 		...base,
+		async findUserLogin(data) {
+			return await collection.findOne(data);
+		},
 	};
-	return Object.assign({}, base, custom);
 }
